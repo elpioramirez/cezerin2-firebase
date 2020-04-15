@@ -1,0 +1,36 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: plum;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    margin: 1em;
+}
+
+.item {
+    color: white;
+    margin: 2em 1em 1em 1em;
+}
+
+.input {
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    margin: .8em;
+}
+
+.icon {
+    margin: .2em;
+}
+
+.button {
+    display: none;
+}
