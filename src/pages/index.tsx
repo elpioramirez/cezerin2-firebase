@@ -24,11 +24,6 @@ const IndexPage = () => (
       <Cards />
       <Cards />
       <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
     </div>
   </Layout>
 )

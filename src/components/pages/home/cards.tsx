@@ -48,7 +48,7 @@ const CardExample = () => {
           <a href="#!" className="activator waves-effect waves-light mr-4">
             <MDBIcon icon="share-alt" className="white-text" />
           </a>
-          <MDBCardTitle>MDBCard Title</MDBCardTitle>
+          <MDBCardTitle>Card Title</MDBCardTitle>
           <hr className="hr-light" />
           <MDBCardText className="white-text">
             Some quick example text to build on the card title and make up the

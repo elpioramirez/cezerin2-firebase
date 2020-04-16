@@ -3,8 +3,11 @@
     padding: 0;
     background-color: plum;
     display: flex;
-    flex-direction: row;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
+
 
 .logo {
     color: white;
@@ -15,7 +18,7 @@
 
 .item {
     color: white;
-    margin: 2em 1em 1em 1em;
+    margin: 1em;
 }
 
 .input {
@@ -32,5 +35,19 @@
 }
 
 .button {
-    display: none;
+    color: plum;
+}
+
+/* end styles */
+.flex-end {
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+}
+
+@media(min-width:800) {
+    .bars {
+        display: none;
+    }
 }

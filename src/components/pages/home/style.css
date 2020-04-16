@@ -6,11 +6,36 @@
 /* items as grid */
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto;
 }
 
 .cards {
     padding: 0;
     margin: 0;
     display: grid;
+}
+
+
+@media(min-width:300px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media(min-width:600px) {
+    .grid-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media(min-width:1200px) {
+    .grid-container {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media(min-width:2400px) {
+    .grid-container {
+        grid-template-columns: auto auto auto auto auto;
+    }
 }

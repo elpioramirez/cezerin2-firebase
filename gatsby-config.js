@@ -6,6 +6,10 @@ const parseNewLines = function(key) {
 }
 const privateKey = parseNewLines(process.env.FIREBASE_CONFIG_PRIVATE_KEY)
 const stripePrivateKey = parseNewLines(process.env.STRIPE_CONFIG_KEY)
+const DBUser = parseNewLines(process.env.MONGODB_CONFIG_USER)
+const DBPassword = parseNewLines(process.env.MONGODB_CONFIG_PASSWORD)
+const DBCluster = parseNewLines(process.env.MONGODB_CONFIG_CLUSTER)
+const DBDataBase = parseNewLines(process.env.MONGODB_CONFIG_DATABASE)
 module.exports = {
   siteMetadata: {
     title: `Cezerin2-Store`,
@@ -27,12 +31,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `cezerin2-store`,
-        short_name: `starter`,
+        short_name: `cezerin`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // svg also works but sometimes it bugs out // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -71,7 +75,7 @@ module.exports = {
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString: ``,
+        connectionString: `mongodb+srv://${DBUser}:${DBPassword}@${DBCluster}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
         dbName: `shop`,
         collection: [`pages`, `products`],
       },
@@ -96,7 +100,16 @@ module.exports = {
     {
       resolve: "gatsby-theme-firebase",
       options: {
-        credentials: {},
+        credentials: {
+          apiKey: "AIzaSyCD157Azp2GrkBGN6HC4s9mL8BmfDIyX-g",
+          authDomain: "cezerin-store.firebaseapp.com",
+          databaseURL: "https://cezerin-store.firebaseio.com",
+          projectId: "cezerin-store",
+          storageBucket: "cezerin-store.appspot.com",
+          messagingSenderId: "857840593286",
+          appId: "1:857840593286:web:ff68f8000b8c1f7b0ba407",
+          measurementId: "G-2137SEGBGY",
+        },
         loginPath: "/user/login",
         loginRedirectPath: "/contact",
         socialLogins: ["google"],

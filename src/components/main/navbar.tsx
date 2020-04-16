@@ -17,25 +17,22 @@ const NavbarPage = () => {
   return (
     <div className="body">
       <p className="logo">Cezerin</p>
-      <div className="search">
+      <MDBIcon icon="bars" className="bars" />
+      <div className="flex-end">
         <MDBIcon icon="search" className="icon" />
         <input placeholder="Search" type="text" className="input" />
-      </div>
-      <div className="flex-end">
-        <div className="items">
-          <Link to="" className="item">
-            Category
-          </Link>
-          <Link to="" className="item">
-            Category
-          </Link>
-          <Link to="" className="item">
-            Category
-          </Link>
-          <Link to="" className="item">
-            Contact Us
-          </Link>
-        </div>
+        <Link to="" className="item">
+          Category
+        </Link>
+        <Link to="" className="item">
+          Category
+        </Link>
+        <Link to="" className="item">
+          Category
+        </Link>
+        <Link to="" className="item">
+          Contact Us
+        </Link>
         <button className="cart button">
           <MDBIcon icon="shopping-bag" />
         </button>
