@@ -8,7 +8,7 @@ const privateKey = parseNewLines(process.env.FIREBASE_CONFIG_PRIVATE_KEY)
 const stripePrivateKey = parseNewLines(process.env.STRIPE_CONFIG_KEY)
 const DBUser = parseNewLines(process.env.MONGODB_CONFIG_USER)
 const DBPassword = parseNewLines(process.env.MONGODB_CONFIG_PASSWORD)
-const DBCluster = parseNewLines(process.env.MONGODB_CONFIG_CLUSTER)
+const DBServerName = parseNewLines(process.env.MONGODB_CONFIG_SERVER_NAME)
 const DBDataBase = parseNewLines(process.env.MONGODB_CONFIG_DATABASE)
 module.exports = {
   siteMetadata: {
@@ -75,7 +75,7 @@ module.exports = {
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString: `mongodb+srv://${DBUser}:${DBPassword}@${DBCluster}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
+        connectionString: `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
         dbName: `shop`,
         collection: [`pages`, `products`],
       },
