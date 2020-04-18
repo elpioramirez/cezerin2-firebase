@@ -1,3 +1,4 @@
+const config = require("./config")
 if (!process.env.GITHUB_ACTION) {
   require("dotenv").config()
 }
@@ -12,9 +13,9 @@ const DBServerName = parseNewLines(process.env.MONGODB_CONFIG_SERVER_NAME)
 const DBDataBase = parseNewLines(process.env.MONGODB_CONFIG_DATABASE)
 module.exports = {
   siteMetadata: {
-    title: `Cezerin2-Store`,
-    description: `Cezerin2-store template.`,
-    author: `@himadu`,
+    title: config.title,
+    description: config.description,
+    author: config.author,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,13 +31,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `cezerin2-store`,
-        short_name: `cezerin`,
+        name: config.name,
+        short_name: config.short_name,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logo.png`, // svg also works but sometimes it bugs out // This path is relative to the root of the site.
+        icon: config.icon, // svg also works but sometimes it bugs out // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -75,8 +76,8 @@ module.exports = {
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString: `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
-        dbName: `shop`,
+        connectionString: config.connectionString,
+        dbName: config.dbName,
         collection: [`pages`, `products`],
       },
     },
@@ -101,14 +102,14 @@ module.exports = {
       resolve: "gatsby-theme-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyCD157Azp2GrkBGN6HC4s9mL8BmfDIyX-g",
-          authDomain: "cezerin-store.firebaseapp.com",
-          databaseURL: "https://cezerin-store.firebaseio.com",
-          projectId: "cezerin-store",
-          storageBucket: "cezerin-store.appspot.com",
-          messagingSenderId: "857840593286",
-          appId: "1:857840593286:web:ff68f8000b8c1f7b0ba407",
-          measurementId: "G-2137SEGBGY",
+          apiKey: config.apiKey,
+          authDomain: config.authDomain,
+          databaseURL: config.databaseURL,
+          projectId: config.projectId,
+          storageBucket: config.storageBucket,
+          messagingSenderId: config.messagingSenderId,
+          appId: config.appId,
+          measurementId: config.measurementId,
         },
         loginPath: "/user/login",
         loginRedirectPath: "/contact",
