@@ -5,8 +5,6 @@ if (!process.env.GITHUB_ACTION) {
 const parseNewLines = function(key) {
   return typeof key === "string" ? key.replace(/\\n/g, "\n") : key
 }
-const privateKey = parseNewLines(process.env.FIREBASE_CONFIG_PRIVATE_KEY)
-const stripePrivateKey = parseNewLines(process.env.STRIPE_CONFIG_KEY)
 const DBUser = parseNewLines(process.env.MONGODB_CONFIG_USER)
 const DBPassword = parseNewLines(process.env.MONGODB_CONFIG_PASSWORD)
 const DBServerName = parseNewLines(process.env.MONGODB_CONFIG_SERVER_NAME)
@@ -93,7 +91,7 @@ module.exports = {
           "Sku",
           "Subscription",
         ],
-        secretKey: stripePrivateKey,
+        secretKey: config.secretKey,
         downloadFiles: true,
       },
     },
