@@ -34,11 +34,11 @@ const NavbarPage = () => {
           Contact Us
         </Link>
         <button className="cart button">
-          <MDBIcon icon="shopping-bag" />
+          <MDBIcon icon="shopping-bag" size="2x" />
         </button>
-        <button className="user button">
-          <MDBIcon icon="user-circle" />
-        </button>
+        <Link to="/user/login" className="user-button">
+          <MDBIcon icon="user-circle" size="2x" />
+        </Link>
       </div>
     </div>
   )

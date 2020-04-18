@@ -36,6 +36,11 @@
 
 .button {
     color: plum;
+    padding: 2;
+}
+
+.user-button {
+    color: red;
 }
 
 /* end styles */
