@@ -15,66 +15,74 @@ const ContactPage = () => {
       <MDBCard>
         <MDBRow>
           <MDBCol lg="8">
-            <MDBCardBody className="form">
-              <h3 className="mt-4">
-                <MDBIcon icon="envelope" className="pr-2" />
-                Write to us:
-              </h3>
-              <MDBRow>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-name"
-                      label="Your name"
-                    />
-                  </div>
-                </MDBCol>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-email"
-                      label="Your email"
-                    />
-                  </div>
-                </MDBCol>
-              </MDBRow>
-              <MDBRow>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-phone"
-                      label="Your phone"
-                    />
-                  </div>
-                </MDBCol>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-company"
-                      label="Your company"
-                    />
-                  </div>
-                </MDBCol>
-              </MDBRow>
-              <MDBRow>
-                <MDBCol md="12">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="textarea"
-                      id="form-contact-message"
-                      label="Your message"
-                    />
-                    <MDBBtn rounded color="blue">
-                      <MDBIcon icon="paper-plane" />
-                    </MDBBtn>
-                  </div>
-                </MDBCol>
-              </MDBRow>
-            </MDBCardBody>
+            <form action="http://empty.com/contact" method="post">
+              <MDBCardBody className="form">
+                <h3 className="mt-4">
+                  <MDBIcon icon="envelope" className="pr-2" />
+                  Write to us:
+                </h3>
+                <MDBRow>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="text"
+                        name="name"
+                        id="form-contact-name"
+                        label="Your name"
+                      />
+                    </div>
+                  </MDBCol>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="text"
+                        name="email"
+                        id="form-contact-email"
+                        label="Your email"
+                        na
+                      />
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="text"
+                        name="phone"
+                        id="form-contact-phone"
+                        label="Your phone"
+                      />
+                    </div>
+                  </MDBCol>
+                  <MDBCol md="6">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="text"
+                        name="company"
+                        id="form-contact-company"
+                        label="Your company"
+                      />
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                  <MDBCol md="12">
+                    <div className="md-form mb-0">
+                      <MDBInput
+                        type="textarea"
+                        name="message"
+                        id="form-contact-message"
+                        label="Your message"
+                      />
+                      <MDBBtn type="submit" rounded color="blue">
+                        <MDBIcon icon="paper-plane" />
+                      </MDBBtn>
+                    </div>
+                  </MDBCol>
+                </MDBRow>
+              </MDBCardBody>
+            </form>
           </MDBCol>
           <MDBCol lg="4">
             <MDBCardBody className="contact text-center h-100 white-text">
