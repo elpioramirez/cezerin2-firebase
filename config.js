@@ -11,6 +11,8 @@ module.exports = {
   // mongodb settings
   connectionString: `mongodb://127.0.0.1:27017/shop`,
   dbName: `shop`,
+  // cezerin backend api
+  cezein2URL: ``,
   // firebase config
   apiKey: "AIzaSyCD157Azp2GrkBGN6HC4s9mL8BmfDIyX-g",
   authDomain: "cezerin-store.firebaseapp.com",
