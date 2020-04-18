@@ -20,7 +20,7 @@ Cezerin2-Store apllication build with gatsby which is still in progress.
     npm i -g gatsby-cli
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -29,13 +29,39 @@ Cezerin2-Store apllication build with gatsby which is still in progress.
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
     Open the `cezerin2-store-ssr` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+
+## 🚀 Deployment
+
+1.  **Install Gatsby.**
+
+    Install Gatsby CLI by,
+
+    ```shell
+    npm i -g gatsby-cli
+    ```
+
+2.  **Configure.**
+
+    Configure config.js in root folder as needed.
+
+3.  **Build.**
+
+    Build the project files by,
+
+    ```shell
+    gatsby build
+    ```
+
+4.  **Deploy.**
+
+    Deploy the files in public folder to your favourite hosting. 😀
 
 ## 🧐 What's inside?
 

@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import {
   MDBContainer,
   MDBCard,
@@ -7,32 +6,13 @@ import {
   MDBCardImage,
   MDBCardTitle,
   MDBCardText,
-  MDBRow,
-  MDBCol,
   MDBIcon,
 } from "mdbreact"
 import "./style.css"
 
-const CardExample = () => {
-  const data = useStaticQuery(graphql`
-    query Products {
-      allMongodbShopProducts(
-        filter: { discontinued: { eq: false }, enabled: { eq: true } }
-      ) {
-        edges {
-          node {
-            images {
-              filename
-              alt
-            }
-            regular_price
-            name
-          }
-        }
-      }
-    }
-  `)
-
+const CardTemplate = data => {
+  console.log(data.data)
+  const item = data.data.node
   return (
     <MDBContainer className="cards">
       <MDBCard>
@@ -42,17 +22,16 @@ const CardExample = () => {
           overlay="white-slight"
           hover
           waves
-          alt="MDBCard image cap"
+          alt={item.images.alt}
         />
         <MDBCardBody className="elegant-color white-text rounded-bottom">
           <a href="#!" className="activator waves-effect waves-light mr-4">
             <MDBIcon icon="share-alt" className="white-text" />
           </a>
-          <MDBCardTitle>Card Title</MDBCardTitle>
+          <MDBCardTitle>{item.slug}</MDBCardTitle>
           <hr className="hr-light" />
           <MDBCardText className="white-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card&apos;s content.
+            ${item.regular_price}
           </MDBCardText>
           <a href="#!" className="black-text d-flex justify-content-end">
             <h5 className="white-text">
@@ -66,4 +45,4 @@ const CardExample = () => {
   )
 }
 
-export default CardExample
+export default CardTemplate
