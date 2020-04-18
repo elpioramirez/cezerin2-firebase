@@ -56,6 +56,7 @@ Cezerin2-Store apllication build with gatsby which is still in progress.
     Build the project files by,
 
     ```shell
+    npm i
     gatsby build
     ```
 
