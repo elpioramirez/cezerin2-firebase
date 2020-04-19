@@ -1,17 +1,33 @@
- name: Prettier Action
-  uses: creyD/prettier_action@v2.2
-  with:
-    # Commit message
-    commit_message: # optional, default is Prettified Code!
-    # Commit options
-    commit_options: # optional
-    # File pattern used for `git add`
-    file_pattern: # optional, default is *
-    # Options for the `prettier` command
-    prettier_options: # optional, default is --write **/*.js
-    # Target branch for the changes
-    branch: 
-    # Running the script in dry mode just shows whether there are files that should be prettified or not
-    dry: # optional
-    # Specific version of prettier (by default just use the latest version)
-    prettier_version: # optional
+name: Prettier Action
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x, 13.x, x.x]
+
+    steps:
+      - uses: creyD/prettier_action@v2.2
+        with:
+          # Commit message
+          commit_message: Prettified Code! # optional, default is Prettified Code!
+          # Commit options
+          commit_options: git add # optional
+          # File pattern used for `git add`
+          # file_pattern: prettier # optional, default is *
+          # Options for the `prettier` command
+          # prettier_options: # optional, default is --write **/*.js
+          # Target branch for the changes
+          branch: master
+          # Running the script in dry mode just shows whether there are files that should be prettified or not
+          dry: true # optional
+          # Specific version of prettier (by default just use the latest version)
+          # prettier_version: # optional
