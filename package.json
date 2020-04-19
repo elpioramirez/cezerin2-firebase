@@ -40,7 +40,7 @@
     "ecommerce",
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "UNLICENSE",
   "scripts": {
     "dev": "cross-env gatsby develop",
     "dev-build": "cross-env gatsby build",
