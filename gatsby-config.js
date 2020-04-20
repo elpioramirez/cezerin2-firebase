@@ -74,7 +74,9 @@ module.exports = {
     {
       resolve: `gatsby-source-mongodb`,
       options: {
-        connectionString: config.connectionString,
+        connectionString:
+          config.connectionString ||
+          `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
         dbName: config.dbName,
         collection: [`pages`, `products`],
       },
