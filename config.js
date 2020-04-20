@@ -22,6 +22,9 @@ module.exports = {
   messagingSenderId: "857840593286",
   appId: "1:857840593286:web:ff68f8000b8c1f7b0ba407",
   measurementId: "G-2137SEGBGY",
+  // mailchimp endpoint
+  mailEndpoint:
+    "https://us4.admin.mailchimp.com/lists/integration/embeddedcode",
   // stripe config
   secretKey: "sk_test_1234567890123456789012345678901234",
   // end of the config

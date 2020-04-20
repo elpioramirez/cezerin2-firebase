@@ -95,6 +95,13 @@ module.exports = {
         downloadFiles: true,
       },
     },
+    // mailchimp
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: config.mailEndpoint, // add your MC list endpoint here; see instructions below
+      },
+    },
     // firebase theme
     {
       resolve: "gatsby-theme-firebase",
@@ -110,7 +117,7 @@ module.exports = {
           measurementId: config.measurementId,
         },
         loginPath: "/user/login",
-        loginRedirectPath: "/contact",
+        loginRedirectPath: "/",
         socialLogins: ["google"],
       },
     },
