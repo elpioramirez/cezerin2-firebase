@@ -23,8 +23,9 @@ module.exports = {
   appId: "1:857840593286:web:ff68f8000b8c1f7b0ba407",
   measurementId: "G-2137SEGBGY",
   // mailchimp endpoint
+  // setup = https://www.gatsbyjs.org/packages/gatsby-plugin-mailchimp/#mailchimp-endpoint
   mailEndpoint:
-    "https://us4.admin.mailchimp.com/lists/integration/embeddedcode",
+    "https://example.us10.list-manage.com/subscribe/post?u=b9ef2fdd3edofhec04ba9b930&id=3l948gkt1d",
   // stripe config
   secretKey: "sk_test_1234567890123456789012345678901234",
   // end of the config

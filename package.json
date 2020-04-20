@@ -41,7 +41,7 @@
     "ecommerce",
     "gatsby"
   ],
-  "license": "UNLICENSE",
+  "license": "Unlicense",
   "scripts": {
     "dev": "cross-env gatsby develop",
     "dev-build": "cross-env gatsby build",
