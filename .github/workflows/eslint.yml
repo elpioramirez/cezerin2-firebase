@@ -1,21 +1,12 @@
-name: ESLint Action
+name: Lint
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+on: pull_request
 
 jobs:
-  build:
+  eslint:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x, 13.x]
-
     steps:
-      - uses: hallee/eslint-action@1.0.1
+      - uses: actions/checkout@v1
+      - uses: hallee/eslint-action@master
         with:
-          # Commit message
-          commit_message: ESLinted Code! # optional, default is Prettified Code!
+          repo-token: ${{secrets.GITHUB_TOKEN}}
