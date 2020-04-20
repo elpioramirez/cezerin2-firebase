@@ -80,7 +80,7 @@ module.exports = {
       },
     },
     // stripe
-    {
+    /*{
       resolve: `gatsby-source-stripe`,
       options: {
         objects: [
@@ -94,7 +94,7 @@ module.exports = {
         secretKey: config.secretKey,
         downloadFiles: true,
       },
-    },
+    },*/
     // mailchimp
     {
       resolve: "gatsby-plugin-mailchimp",
