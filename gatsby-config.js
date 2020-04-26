@@ -9,11 +9,12 @@ const DBUser = parseNewLines(process.env.MONGODB_CONFIG_USER)
 const DBPassword = parseNewLines(process.env.MONGODB_CONFIG_PASSWORD)
 const DBServerName = parseNewLines(process.env.MONGODB_CONFIG_SERVER_NAME)
 const DBDataBase = parseNewLines(process.env.MONGODB_CONFIG_DATABASE)
+const firebaseKey = parseNewLines(process.env.FIREBASE_KEY)
 module.exports = {
   siteMetadata: {
     title: config.title,
     description: config.description,
-    author: config.author,
+    author: config.author
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,8 +22,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -35,8 +36,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: config.icon, // svg also works but sometimes it bugs out // This path is relative to the root of the site.
-      },
+        icon: config.icon // svg also works but sometimes it bugs out // This path is relative to the root of the site.
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -54,8 +55,8 @@ module.exports = {
         // Setting a color is optional.
         color: `tomato`,
         // Disable the loading spinner.
-        showSpinner: true,
-      },
+        showSpinner: true
+      }
     },
     // typescript
     {
@@ -63,8 +64,8 @@ module.exports = {
       options: {
         isTSX: true, // defaults to false
         jsxPragma: `React`, // was jsx defaults to "React"
-        allExtensions: true, // defaults to false
-      },
+        allExtensions: true // defaults to false
+      }
     },
     /*
      * Gatsby's data processing layer begins with “source” plugins. Here we
@@ -78,8 +79,28 @@ module.exports = {
           config.connectionString ||
           `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
         dbName: config.dbName,
-        collection: [`pages`, `products`],
-      },
+        collection: [`pages`, `products`]
+      }
+    },
+    {
+      resolve: "gatsby-source-flamelink",
+      options: {
+        firebaseConfig: {
+          pathToServiceAccount: {
+            projectId: config.projectId,
+            clientEmail: "foo@<PROJECT_ID>.iam.gserviceaccount.com",
+            privateKey: firebaseKey || process.env.FIREBASE_KEY
+          },
+          databaseURL: config.databaseURL,
+          storageBucket: config.storageBucket
+        },
+        dbType: "cf",
+        environment: "production",
+        content: true,
+        populate: true,
+        navigation: true,
+        globals: true
+      }
     },
     // stripe
     /*{
@@ -101,8 +122,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: config.mailEndpoint, // add your MC list endpoint here; see instructions below
-      },
+        endpoint: config.mailEndpoint // add your MC list endpoint here; see instructions below
+      }
     },
     // firebase theme
     {
@@ -116,12 +137,12 @@ module.exports = {
           storageBucket: config.storageBucket,
           messagingSenderId: config.messagingSenderId,
           appId: config.appId,
-          measurementId: config.measurementId,
+          measurementId: config.measurementId
         },
         loginPath: "/user/login",
         loginRedirectPath: "/",
-        socialLogins: ["google"],
-      },
-    },
-  ],
+        socialLogins: ["google"]
+      }
+    }
+  ]
 }

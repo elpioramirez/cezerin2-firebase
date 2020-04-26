@@ -19,6 +19,7 @@
     "gatsby-plugin-sitemap": "^2.3.1",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-source-flamelink": "^2.1.2",
     "gatsby-source-mongodb": "^2.2.1",
     "gatsby-source-stripe": "^3.0.7",
     "gatsby-theme-firebase": "^1.0.8",
