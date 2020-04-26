@@ -72,16 +72,16 @@ module.exports = {
      * setup the site to pull data from the "documents" collection in a local
      * MongoDB instance
      */
-    {
-      resolve: `gatsby-source-mongodb`,
-      options: {
-        connectionString:
-          config.connectionString ||
-          `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
-        dbName: config.dbName,
-        collection: [`pages`, `products`]
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-mongodb`,
+    //   options: {
+    //     connectionString:
+    //       config.connectionString ||
+    //       `mongodb+srv://${DBUser}:${DBPassword}@${DBServerName}.mongodb.net/${DBDataBase}?retryWrites=true&w=majority`,
+    //     dbName: config.dbName,
+    //     collection: [`pages`, `products`]
+    //   }
+    // },
     {
       resolve: "gatsby-source-flamelink",
       options: {
